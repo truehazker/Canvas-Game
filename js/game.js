@@ -90,19 +90,19 @@ var reset = function(){
 
 //modifier
 var update = function(modifier){
-    if (38 in keysDown){
+    if (38 in keysDown || 87 in keysDown){
         //Player holding up
         hero.y -= hero.speed * modifier;
     }
-    if (40 in keysDown){
+    if (40 in keysDown || 83 in keysDown){
         //Player holding down
         hero.y += hero.speed * modifier;
     }
-    if (37 in keysDown){
+    if (37 in keysDown || 65 in keysDown){
         //Player holding left
         hero.x -= hero.speed * modifier;
     }
-    if (39 in keysDown){
+    if (39 in keysDown || 68 in keysDown){
         //Player holding right
         hero.x += hero.speed * modifier;
     }
@@ -159,7 +159,7 @@ var render = function(){
     ctx.font = "24px Helvetica";
     ctx.textAlign = "left";
     ctx.textBaseline = "top";
-    ctx.fillText("Goblins caught:" + monstersCaught, 32, 32);
+    ctx.fillText("Goblins caught: " + monstersCaught, 32, 32);
 };
 
 var main = function(){
